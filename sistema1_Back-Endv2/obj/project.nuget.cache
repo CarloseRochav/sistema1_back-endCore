@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tsyHQP8HS6W5QfoU6CxQdSmBoH3M1TOJBDQ2HfkaJhEU9HdSey69OlGbHQpaHJ+cHwGpx40wwDiN10f3ByA1Rg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ernes\\Documents\\Tareas\\Workspace_C#\\sistema1_Back-Endv2\\sistema1_Back-Endv2\\sistema1_Back-Endv2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ernes\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}
