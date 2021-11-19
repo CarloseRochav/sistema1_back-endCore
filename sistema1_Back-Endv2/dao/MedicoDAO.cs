@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using sistema1_Back_Endv2.data;
 
 namespace sistema1_Back_Endv2.dao
 
@@ -11,8 +12,25 @@ namespace sistema1_Back_Endv2.dao
         private const string sql_actualizar = "UPDATE PERSONAS SET NOMBRE =?, APELLIDO = ?, EDAD=? WHERE ID=?";
         private const string sql_eliminar = "DELETE FROM PERSONAS WHERE ID=?";
 
-        //variable de conexion
-        SqlConnection connection = null;
+        Conexion conn = new Conexion();
+        SqlCommand comando = new SqlCommand();
+        SqlConnection conex = null;
+
+        
+
+
+        //Funcionando ; falta revision
+        public void InsertarRegistro()
+        {            
+            conex = conn.getConnection();
+            conex.Open();//Abrir la conexion
+            comando.Connection = conex;
+            comando.CommandText = "SELECT * FROM PERSONAS";
+            //comando.
+            conex.Close();//Cerrar conexion
+        }
+        
+       
 
     }
 }
