@@ -9,25 +9,17 @@ using sistema1_Back_Endv2.data;
 namespace sistema1_Back_Endv2.Controllers
 {
     
-    [ApiController]//Necesario para poder la clase como controlador
+    [ApiController]//Necesario pare reconocer una clase como Controlador
     
-    public class PersonaController : ControllerBase
+    public class PersonaController : ControllerBase //Necesario para asignarlo como controlador ; no maneja vistas
     {
 
-        //Creacion de objeto dao
-        //private PersonaDAO personaDao;//error, esta nulo
-        private PersonaDAO personaDao = new();
+        //Creacion de objeto dao        
+        private PersonaDAO personaDao = new();        
+
         
-
-        //Constructor / Controlador
-        //public PersonaController(PersonaDAO personaDao)
-        //{
-        //    persona = personaDao;
-        //}
-
-      //  Insertar datos por medio de Get; Valores Estaticos
-
-       [HttpGet]
+        //Insertar datos por medio de Get; Valores Estaticos
+        [HttpGet]
         [Route("[controller]")]//Ruta || Endpoint
         public IActionResult InsertarPersona()
         {
@@ -39,16 +31,14 @@ namespace sistema1_Back_Endv2.Controllers
             }catch(Exception ex)
             {
                 return NotFound(ex);
-            }
-            //return Ok("Ruta conectada - ¿Insercion? " + persona.getNombre());
+            }           
 
         }
 
 
         //[HttpGet]
-        //// GET: /HelloWorld/Welcome/ 
-        //// Requires using System.Text.Encodings.Web;
-        ////[Route("[controller]")]//Ruta || Endpoint
+        // GET: /HelloWorld/Welcome/ 
+        // Requires using System.Text.Encodings.Web;        
         //[Route("[controller]")]//Ruta || Endpoint
         //public IActionResult Welcome(string name, int numTimes = 1)//IActionResult Necesario
         //{

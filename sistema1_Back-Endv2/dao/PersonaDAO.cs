@@ -22,9 +22,7 @@ namespace sistema1_Back_Endv2.dao
 
                 try{
                 conn = conexion.getConnection();
-                conn.Open();
-                //stmt.Connection = conn;
-                //stmt.CommandText=sql_insertar;
+                conn.Open();                
                 stmt = new SqlCommand(sql_insertar, conn);
                 stmt.Parameters.AddWithValue("@nombre", persona.getNombre());
                 stmt.Parameters.AddWithValue("@apellido", persona.getApellido());
@@ -38,7 +36,7 @@ namespace sistema1_Back_Endv2.dao
             {
                 return ex.ToString();
                 //throw new HttpResponseException(HttpStatusCode.NotFound);                
-                throw new Exception("Outer", ex);//Detiene la app y muestra mensaje
+                //throw new Exception("Outer", ex);//Detiene la app y muestra mensaje
                 
             }
 

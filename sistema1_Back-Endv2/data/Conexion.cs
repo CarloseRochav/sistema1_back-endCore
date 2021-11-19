@@ -15,23 +15,6 @@ namespace sistema1_Back_Endv2.data
         public SqlConnection getConnection()
         {
             return conn;
-        }
-
-        //private static void CreateCommand(string queryString,
-        //string connectionString)
-        //{
-        //    using (SqlConnection connection = new SqlConnection(
-        //               connectionString))
-        //    {
-        //        SqlCommand command = new SqlCommand(queryString, connection);
-        //        command.Connection.Open();
-        //        command.ExecuteNonQuery();
-        //    }
-        //}
-
-        //private static SqlConnection getConecction()
-        //{
-        //    return connection;
-        //}
+        }        
     }
 }
