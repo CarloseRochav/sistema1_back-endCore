@@ -39,6 +39,9 @@ namespace sistema1_Back_Endv2.data
             this.edad = edad;
         }
 
+        //Constructor con 0 Parametros
+        public Persona() { }
+
 
         //Si queremos actualizas un atributo individual del registro
         //Metodos getters and setters

@@ -15,25 +15,47 @@ namespace sistema1_Back_Endv2.Controllers
     {
 
         //Creacion de objeto dao        
-        private PersonaDAO personaDao = new();        
+        private PersonaDAO personaDao = new();
 
-        
+
         //Insertar datos por medio de Get; Valores Estaticos
-        [HttpGet]
+        [HttpPost]
         [Route("[controller]")]//Ruta || Endpoint
-        public IActionResult InsertarPersona()
+        public IActionResult InsertarPersona([FromBody]  Persona _persona)//[FromBody] : Para recibir objetos JSON 
         {
-            Persona persona = new("Claudette", "Cruz", 22);
+            string nombre = _persona.getNombre();
+            string apellido = _persona.getApellido();
+            int edad = _persona.getEdad();
+            //Persona persona = new("Claudette", "Cruz", 22);
+            Persona persona = new(nombre,apellido,edad);
+            //return Ok(persona);
             try
             {
-                string res = personaDao.insertarRegistro(persona);                
-                return Ok(res);                
-            }catch(Exception ex)
+                //Insert
+                string res = personaDao.insertarRegistro(persona);
+                return Ok(res);
+            }
+            catch (Exception ex)
             {
                 return NotFound(ex);
-            }           
+            }
 
         }
+        //[HttpGet]
+        //[Route("[controller]")]//Ruta || Endpoint
+        //public IActionResult InsertarPersona(Persona persona)
+        //{
+        //    Persona persona = new("Claudette", "Cruz", 22);
+        //    try
+        //    {
+        //        string res = personaDao.insertarRegistro(persona);                
+        //        return Ok(res);                
+        //    }catch(Exception ex)
+        //    {
+        //        return NotFound(ex);
+        //    }           
+
+        //}
 
 
         //[HttpGet]
@@ -53,12 +75,13 @@ namespace sistema1_Back_Endv2.Controllers
         //Mostrar Registros
         [HttpGet]
         [Route("[controller]/mostrar")]//Ruta || Endpoint
-        public List<Persona> mostrarPesonas()
+        public IActionResult mostrarPesonas() // Or List<Persona> mostrarPersonas()
         {
             List<Persona> personas = personaDao.mostrarPersonas();
 
-            return personas;
+            return Ok(personas);//Regresa un arreglo de objetos
             //return Ok("TOdo bien");
+            
             
         }
 
@@ -71,7 +94,6 @@ namespace sistema1_Back_Endv2.Controllers
 
             //personas.ForEach((persona) => return Ok(persona));         
             return Ok(persona);
-
         }
 
 
