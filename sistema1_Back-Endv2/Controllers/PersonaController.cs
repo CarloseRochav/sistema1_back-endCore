@@ -49,7 +49,32 @@ namespace sistema1_Back_Endv2.Controllers
         //{
         //    return View();
         //}
-    
-     
+
+        //Mostrar Registros
+        [HttpGet]
+        [Route("[controller]/mostrar")]//Ruta || Endpoint
+        public List<Persona> mostrarPesonas()
+        {
+            List<Persona> personas = personaDao.mostrarPersonas();
+
+            return personas;
+            //return Ok("TOdo bien");
+            
+        }
+
+        //Mostrar Single Person
+        [HttpGet]
+        [Route("[controller]/persona")]//Ruta || Endpoint
+        public IActionResult showSinglePerson()
+        {
+            Persona persona = personaDao.GetSinglePerson();
+
+            //personas.ForEach((persona) => return Ok(persona));         
+            return Ok(persona);
+
+        }
+
+
+
     }
 }

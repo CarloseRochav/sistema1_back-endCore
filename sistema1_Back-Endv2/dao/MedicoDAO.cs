@@ -14,9 +14,7 @@ namespace sistema1_Back_Endv2.dao
 
         Conexion conn = new Conexion();
         SqlCommand comando = new SqlCommand();
-        SqlConnection conex = null;
-
-        
+        SqlConnection conex = null;  
 
 
         //Funcionando ; falta revision
